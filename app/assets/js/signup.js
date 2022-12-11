@@ -1,4 +1,5 @@
-const Url = "http://localhost:3000";
+// const Url = "http://localhost:3000";
+const Url = "https://vue-test-render.onrender.com";
 
 const registerEmail = document.querySelector("#register-email");
 const registerPwd = document.querySelector("#register-password");

@@ -1,4 +1,4 @@
-const Url = "http://localhost:3000";
+const Url = "https://vue-test-render.onrender.com";
 
 const viewEditTitle = document.querySelector("#view-edit-title");
 const viewEditContent = document.querySelector("#view-edit-content");
