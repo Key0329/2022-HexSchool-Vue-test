@@ -81,17 +81,24 @@ function deleteViews() {
     adminViewRemoveBtn.forEach(function (item) {
       item.addEventListener("click", function (e) {
         var id = e.target.dataset.id;
-        axios["delete"]("".concat(Url, "/views/").concat(id)).then(function () {
-          Swal.fire({
-            icon: "success",
-            title: "刪除成功",
-            showConfirmButton: false,
-            timer: 1000
-          });
-          localStorage.removeItem("adminViewID");
-          adminInit();
-        })["catch"](function (error) {
-          console.log(error);
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then(function (result) {
+          if (result.isConfirmed) {
+            axios["delete"]("".concat(Url, "/views/").concat(id)).then(function () {
+              localStorage.removeItem("adminViewID");
+              adminInit();
+            })["catch"](function (error) {
+              console.log(error);
+            });
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          }
         });
       });
     });
