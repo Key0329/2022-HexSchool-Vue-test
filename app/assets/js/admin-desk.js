@@ -48,23 +48,30 @@ function deleteViews() {
       item.addEventListener("click", (e) => {
         const id = e.target.dataset.id;
 
-        axios
-          .delete(`${Url}/views/${id}`)
-          .then(() => {
-            Swal.fire({
-              icon: "success",
-              title: "刪除成功",
-              showConfirmButton: false,
-              timer: 1000,
-            });
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            axios
+              .delete(`${Url}/views/${id}`)
+              .then(() => {
+                localStorage.removeItem("adminViewID");
 
-            localStorage.removeItem("adminViewID");
+                adminInit();
+              })
+              .catch((error) => {
+                console.log(error);
+              });
 
-            adminInit();
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          }
+        });
       });
     });
   }
