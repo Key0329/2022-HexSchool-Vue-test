@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Test bookmarks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="./index.html">全台景點</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="havent-login-nav navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link me-4" aria-current="page" href="./login.html">登入</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary" href="./signUp.html">註冊</a>
+              </li>
+            </ul>
+
+            <a class="admin-panel-btn btn btn-dark ms-auto d-none" aria-current="page" href="./desk.html">後台</a>
+
+            <ul class="have-login-nav navbar-nav ms-auto mb-2 mb-lg-0 d-none">
+              <li class="nav-item">
+                <a class="nav-link me-4" aria-current="page" href="./bookmarks.html">收藏列表</a>
+              </li>
+              <li class="d-flex align-items-center nav- me-4">
+                <span>Hello!</span>
+              </li>
+              <li class="nav-item">
+                <a class="logout-btn nav-link btn btn-primary" href="./signUp.html">登出</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+    
+<main class="py-10">
+  <div class="container">
+    <h1>收藏列表</h1>
+    <ul class="bookmark-list row row-cols-1 row-cols-lg-3 list-unstyled"></ul>
+  </div>
+</main>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+
+</html>

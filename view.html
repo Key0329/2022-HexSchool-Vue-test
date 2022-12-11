@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%- title %></title>
+    <title>Vue Test View</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="./assets/style/all.css">
   </head>
@@ -44,7 +44,22 @@
       </div>
     </nav>
 
-    <%- contents %>
+    
+<main class="py-20">
+  <div class="container">
+    <div class="bookmark d-flex align-items-center mb-10 d-none">
+      <p class="bookmark-status me-4">未收藏</p>
+      <button class="bookmark-add-btn btn btn-outline-warning" type="button">
+        加入收藏
+      </button>
+      <button class="bookmark-remove-btn btn btn-warning d-none" type="button">
+        取消收藏
+      </button>
+    </div>
+    <div class="view-detail"></div>
+  </div>
+</main>
+
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
