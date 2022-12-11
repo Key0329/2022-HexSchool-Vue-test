@@ -28,7 +28,11 @@ function login() {
       });
 
       setTimeout(() => {
-        window.location.href = "./index.html";
+        if (localStorage.getItem("role") === "admin") {
+          window.location.href = "./desk.html";
+        } else {
+          window.location.href = "./index.html";
+        }
       }, 1500);
     })
     .catch((error) => {
@@ -69,34 +73,40 @@ const adminPanelBtn = document.querySelector(".admin-panel-btn");
 const bookmark = document.querySelector(".bookmark");
 
 if (token) {
-  haventLoginNav.classList.add("d-none");
-  haveLoginNav.classList.remove("d-none");
+  if (haventLoginNav) {
+    haventLoginNav.classList.add("d-none");
+    haveLoginNav.classList.remove("d-none");
+  }
   if (bookmark) {
     bookmark.classList.remove("d-none");
   }
 }
 
-if (role === "admin") {
-  adminPanelBtn.classList.remove("d-none");
-} else {
-  adminPanelBtn.classList.add("d-none");
+if (adminPanelBtn) {
+  if (role === "admin") {
+    adminPanelBtn.classList.remove("d-none");
+  } else {
+    adminPanelBtn.classList.add("d-none");
+  }
 }
 
 const logoutBtn = document.querySelector(".logout-btn");
 
-logoutBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  localStorage.clear();
+    localStorage.clear();
 
-  Swal.fire({
-    icon: "success",
-    title: "已登出",
-    showConfirmButton: false,
-    timer: 1000,
+    Swal.fire({
+      icon: "success",
+      title: "已登出",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+
+    setTimeout(() => {
+      window.location.href = "./index.html";
+    }, 1500);
   });
-
-  setTimeout(() => {
-    window.location.href = "./index.html";
-  }, 1500);
-});
+}

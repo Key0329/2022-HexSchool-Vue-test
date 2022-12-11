@@ -11,6 +11,12 @@
       "password": "$2a$10$DOgvS1o0p.QCV3XUKg7cSubwtzCFIPeDxBN/a38Y3vD6shXWGcLiu",
       "id": 2,
       "role": "user"
+    },
+    {
+      "email": "123@gmail.com",
+      "password": "$2a$10$m3I098PX/Oa/bjQjJc9j2uvywQJCwYsgaVDgK3ouT7iAqXU.kZ6d6",
+      "role": "user",
+      "id": 3
     }
   ],
   "views": [
@@ -38,6 +44,11 @@
       "viewId": "1",
       "userId": "1",
       "id": 1
+    },
+    {
+      "viewId": "3",
+      "userId": "2",
+      "id": 4
     }
   ]
 }
